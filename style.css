@@ -1,0 +1,28 @@
+article {
+    /* border: 5px solid black; */
+    display: inline-block;
+
+}
+
+h2 {
+    padding: 0px;
+    margin: 0px;
+}
+h1 {
+    margin: 0;
+}
+
+.checkers {
+    font-size: 12px;
+}
+
+.properties {
+    position: absolute;
+    top: 0px;
+    left: 40%;
+
+}
+body {
+    background: url("https://media.giphy.com/media/2Wg6yHcOnts5tLYOC4/giphy.gif") no-repeat center fixed;
+    background-size: cover;
+}
