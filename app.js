@@ -1,10 +1,10 @@
 class Tomagotchi {
     constructor(name) {
         this.name = name;
-        this.hunger = 7;
-        this.sleepiness = 10;
+        this.hunger = 8;
+        this.sleepiness = 1;
         this.age = 0;
-        this.boredom = 9;
+        this.boredom = 1;
     }
 }
 const pet = new Tomagotchi(`${prompt("Name your pet!")}`)
@@ -18,16 +18,16 @@ const sleepy = document.querySelector(".sleepy");
 const feedButton = document.querySelector(".feed")
 const playButton = document.querySelector(".play")
 const sleepButton = document.querySelector(".goSleep")
-age.innerHTML += pet.age;
-name.innerHTML += pet.name;
-hungry.innerHTML += Number(pet.hunger);
-bored.innerHTML += pet.boredom;
-sleepy.innerHTML += pet.sleepiness;
+age.innerText += pet.age;
+name.innerText += pet.name;
+hungry.innerText += Number(pet.hunger);
+bored.innerText += pet.boredom;
+sleepy.innerText += pet.sleepiness;
 
 // when button is pushed....
 const feed = () => {
     if (pet.hunger > 1){
-        hungry.innerHTML = `Hunger: ${pet.hunger -= 1}`
+        hungry.innerText = `Hunger: ${pet.hunger -= 1}`
     } else {
         alert(`${pet.name} is full!`)
     }
@@ -35,7 +35,7 @@ const feed = () => {
 }
 const play = () => {
     if (pet.boredom > 1){
-        bored.innerHTML = `Boredom: ${pet.boredom -= 1}`
+        bored.innerText = `Boredom: ${pet.boredom -= 1}`
     } else {
         alert(`${pet.name} isn't bored!`)
     }
@@ -43,7 +43,7 @@ const play = () => {
 }
 const sleep = () => {
     if (pet.sleepiness > 1){
-        sleepy.innerHTML = `Sleepiness: ${pet.sleepiness -= 1}`
+        sleepy.innerText = `Sleepiness: ${pet.sleepiness -= 1}`
     } else {
         alert(`${pet.name} isn't sleepy!`)
     }
@@ -57,3 +57,48 @@ playButton.addEventListener("click", play);
 
 // sleep
 sleepButton.addEventListener("click", sleep);
+
+// feed increase
+const hangry = () => {
+    // if (pet.hunger < 10) {
+    hungry.innerText = `Hunger: ${pet.hunger += 1}`
+    if (pet.hunger === 10) {
+        deadAF();
+        // alert("YOU KILL YOUR PET!! YOU MURDERER!!")
+    }
+}
+let feedUp = setInterval(hangry, 3000)
+
+// boredom increase
+const boredAF = () => {
+    //if (pet.boredom < 10) {
+    bored.innerText = `Boredom: ${pet.boredom += 1}`
+    if (pet.boredom === 10) {
+        deadAF();
+        //alert("YOU KILL YOUR PET!! YOU MURDERER!!")
+    }
+}
+let boredUp = setInterval(boredAF, 3000)
+// sleep increase
+const sleepyAF = () => {
+    //if (pet.sleepiness < 10) {
+    sleepy.innerText = `Sleepiness: ${pet.sleepiness += 1}`
+    if (pet.sleepiness === 10){
+        deadAF();
+        //alert("YOU KILL YOUR PET!! YOU MURDERER!!")
+    }
+}
+let sleepUp = setInterval(sleepyAF, 3000)
+
+// DED AF
+const deadAF = () => {
+    clearInterval(sleepUp);
+    clearInterval(feedUp);
+    clearInterval(boredUp);
+    let restart = prompt("YOU KILL YOUR PET!! YOU MURDERER!! Do you want to restart? Yes/No?")
+    if (restart.toLowerCase() === "yes"){
+        location.reload(true);
+    }
+}
+
+
