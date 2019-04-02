@@ -52,30 +52,6 @@ hungry.innerText += pet.hunger;
 bored.innerText += pet.boredom;
 sleepy.innerText += pet.sleepiness;
 
-// when button is pushed....
-// const feed = () => {
-//     if (pet.hunger > 1){
-//         hungry.innerText = `Hunger: ${pet.hunger -= 1}`
-//     } else {
-//         alert(`${pet.name} is full!`)
-//     }
-
-// }
-// const play = () => {
-//     if (pet.boredom > 1){
-//         bored.innerText = `Boredom: ${pet.boredom -= 1}`
-//     } else {
-//         alert(`${pet.name} isn't bored!`)
-//     }
-
-// }
-// const sleep = () => {
-//     if (pet.sleepiness > 1){
-//         sleepy.innerText = `Sleepiness: ${pet.sleepiness -= 1}`
-//     } else {
-//         alert(`${pet.name} isn't sleepy!`)
-//     }
-// }
 
 // feed
 feedButton.addEventListener("click", pet.feed);
@@ -96,56 +72,22 @@ const render = () => {
     sleepy.innerText = `Sleepiness: ${pet.sleepiness}`;
     return deadAF();
 }
-let checkUp = setInterval(render, 5000)
-// feed increase
-// const hangry = () => {
-//     return deadAF();
-//     // if (pet.hunger < 10) {
-//     //pet.hunger += 1
-//     //hungry.innerText = `Hunger: ${pet.hunger}`;
-//     //if (pet.hunger === 10) {
-//         // alert("YOU KILL YOUR PET!! YOU MURDERER!!")
-//     //}
-// }
-// let feedUp = setInterval(hangry, 1000)
+let checkUp = setInterval(render, 120000)
 
-// boredom increase
-// const boredAF = () => {
-//     return deadAF();
-//     //if (pet.boredom < 10) {
-//     //bored.innerText = `Boredom: ${pet.boredom += 1}`;
-//     //if (pet.boredom === 10) {
-        
-//         //alert("YOU KILL YOUR PET!! YOU MURDERER!!")
-//     //}
-// }
-// let boredUp = setInterval(boredAF, 5000)
-// // sleep increase
-// const sleepyAF = () => {
-//     return deadAF();
-//     //if (pet.sleepiness < 10) {
-//     //sleepy.innerText = `Sleepiness: ${pet.sleepiness += 1}`;
-//     // if (pet.sleepiness === 10){ 
-//         //alert("YOU KILL YOUR PET!! YOU MURDERER!!")
-//     //}
-// }
-// let sleepUp = setInterval(sleepyAF, 10000)
 
 const oldAF = () => {
     pet.age += 1
     age.innerText = `Age: ${pet.age}`
     if (pet.age === 5) {
         img.src = "https://media.giphy.com/media/3KXUztaYAzHaFH6et3/giphy.gif";
-        //body.style.background = "url('https://media.giphy.com/media/3KXUztaYAzHaFH6et3/giphy.gif') no-repeat center fixed";
-        //body.style.backgroundSize = "cover";
+       
     } else if (pet.age === 10) {
 
         img.src = "https://media.giphy.com/media/7A4GONnjiqxmRhjfgH/giphy.gif";
-        //body.style.background = "url('https://media.giphy.com/media/7A4GONnjiqxmRhjfgH/giphy.gif') no-repeat center fixed";
-        //body.style.backgroundSize = "cover";
+      
     }
 }
-let ageUp = setInterval(oldAF, 10000)
+let ageUp = setInterval(oldAF, 5000)
 
 
 // DED AF
@@ -154,18 +96,10 @@ const deadAF = () => {
         clearInterval(checkUp);
         clearInterval(ageUp);
     checkers.style.color = "red";
-    // clearInterval(feedUp);
-    // clearInterval(boredUp);
-    // clearInterval(ageUp);
+
     img.src = "gifs/dead.gif";
 
     alert("WASTED!! YOUR PET DIED!")
-    // let restart = prompt("YOU KILL YOUR PET!! YOU MURDERER!! Do you want to restart? Yes/No?")
-    // if (restart.toLowerCase() === "yes"){
-    //     location.reload(true);
-    // }
-    // } else {
-    //     render();
     }
 }
 
