@@ -90,19 +90,21 @@ const sleepyAF = () => {
     }
 }
 let sleepUp = setInterval(sleepyAF, 120000)
-
+const img = document.querySelector("img");
 const oldAF = () => {
     pet.age += 1
     age.innerText = `Age: ${pet.age}`
     if (pet.age === 5) {
-        body.style.background = "url('https://media.giphy.com/media/3KXUztaYAzHaFH6et3/giphy.gif') no-repeat center fixed";
-        body.style.backgroundSize = "cover";
+        img.src = "https://media.giphy.com/media/3KXUztaYAzHaFH6et3/giphy.gif";
+        //body.style.background = "url('https://media.giphy.com/media/3KXUztaYAzHaFH6et3/giphy.gif') no-repeat center fixed";
+        //body.style.backgroundSize = "cover";
     } else if (pet.age === 10) {
-        body.style.background = "url('https://media.giphy.com/media/7A4GONnjiqxmRhjfgH/giphy.gif') no-repeat center fixed";
-        body.style.backgroundSize = "cover";
+        img.src = "https://media.giphy.com/media/7A4GONnjiqxmRhjfgH/giphy.gif";
+        //body.style.background = "url('https://media.giphy.com/media/7A4GONnjiqxmRhjfgH/giphy.gif') no-repeat center fixed";
+        //body.style.backgroundSize = "cover";
     }
 }
-let ageUp = setInterval(oldAF, 5000)
+let ageUp = setInterval(oldAF, 10000)
 
 
 // DED AF
@@ -111,6 +113,7 @@ const deadAF = () => {
     clearInterval(feedUp);
     clearInterval(boredUp);
     clearInterval(ageUp);
+    img.src = "gifs/dead.gif";
     alert("WASTED!! YOUR PET DIED!")
     // let restart = prompt("YOU KILL YOUR PET!! YOU MURDERER!! Do you want to restart? Yes/No?")
     // if (restart.toLowerCase() === "yes"){

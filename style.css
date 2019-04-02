@@ -13,16 +13,59 @@ h1 {
 }
 
 .checkers {
-    font-size: 12px;
+    position: relative;
+    top: 80px;
+    left: 75px;
+    z-index: 1;
+    display: inline-flex;
+    font-size: 10px;
+    color: black;
 }
 
 .properties {
     position: absolute;
-    top: 0px;
-    left: 40%;
+    top: 18px;
+    left: 115px;
+    color: white;
 
 }
 body {
-    background: url("https://media.giphy.com/media/2Wg6yHcOnts5tLYOC4/giphy.gif") no-repeat center fixed;
+    background: no-repeat center fixed;
     background-size: cover;
+    background-image: url("gifs/background.gif");
+}
+
+#circle {
+    background-color: black;
+    border: 10px solid black;
+    border-radius: 50%;
+    height: 420px;
+    width: 405px;
+    position: absolute;
+    left: 480px;
+}
+img {
+    width: 295px;
+    height: 195px;
+    position: relative;
+    left: 55px;
+    top: 50px;
+    border-radius: 20%;
+}
+
+.feed, .play, .goSleep {
+    left: -10px;
+    font-size: 28px;
+    position: relative;
+    border-radius: 36%;
+    margin: 7px;
+    top: -15px;
+}
+.buttons {
+    position: relative;
+    top: 78px;
+    left: 77px;
+}
+.hunger, .bored, .sleepy {
+    margin: 5px;
 }
