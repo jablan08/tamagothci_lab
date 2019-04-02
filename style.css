@@ -46,7 +46,7 @@ body {
 
 
 #circle {
-    background-color: darkslateblue;
+    background: linear-gradient(to right, #734b6d, #42275a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     border: 5px solid darkgray;
     border-radius: 50%;
     height: 420px;
@@ -54,6 +54,7 @@ body {
     display: flex;
     position: relative;
     flex-direction: column;
+    box-shadow: -7px -6px 16px 8px rgba(153,136,153,1);
    
 }
 
@@ -63,12 +64,12 @@ body {
 }
 img {
     width: 295px;
-    height: 195px;
+    height: 165px;
     position: relative;
-    left: 55px;
+    left: 52px;
     top: 50px;
     border-radius: 20%;
-    border: 5px outset rgb(0, 0, 255);
+    border: 5px outset rgb(169, 169, 169);
     margin-top: 40px;
 }
 
@@ -79,6 +80,7 @@ img {
     border-radius: 36%;
     margin: 7px;
     top: -15px;
+    border: 2px solid darkslategrey;
 }
 .buttons {
     position: relative;
@@ -104,6 +106,7 @@ img {
     top: 45px;
     font-size: 25px;
     border-radius: 36%;
+    border: 2px solid darkslategrey;
 }
 
 .age {
