@@ -3,7 +3,7 @@ class Tomagotchi {
         this.name = name;
         this.hunger = 1;
         this.sleepiness = 1;
-        this.age = 4;
+        this.age = 1;
         this.boredom = 1;
     }
 }
@@ -68,7 +68,7 @@ const hangry = () => {
         // alert("YOU KILL YOUR PET!! YOU MURDERER!!")
     }
 }
-let feedUp = setInterval(hangry, 120000)
+let feedUp = setInterval(hangry, 60000)
 
 // boredom increase
 const boredAF = () => {
@@ -79,7 +79,7 @@ const boredAF = () => {
         //alert("YOU KILL YOUR PET!! YOU MURDERER!!")
     }
 }
-let boredUp = setInterval(boredAF, 120000)
+let boredUp = setInterval(boredAF, 60000)
 // sleep increase
 const sleepyAF = () => {
     //if (pet.sleepiness < 10) {
