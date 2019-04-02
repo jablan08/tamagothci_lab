@@ -54,7 +54,7 @@ body {
     display: flex;
     position: relative;
     flex-direction: column;
-    box-shadow: -7px -6px 16px 8px rgba(153,136,153,1);
+    box-shadow: -12px -10px 16px 5px rgba(153,136,153,1);
    
 }
 
@@ -74,13 +74,14 @@ img {
 }
 
 .feed, .play, .goSleep {
-    left: -10px;
-    font-size: 28px;
+    left: -3px;
+    font-size: 32px;
     position: relative;
     border-radius: 36%;
     margin: 7px;
     top: -15px;
     border: 2px solid darkslategrey;
+    font-family: 'VT323', monospace;
 }
 .buttons {
     position: relative;
@@ -104,9 +105,10 @@ img {
     position: absolute;
     left: 86px;
     top: 45px;
-    font-size: 25px;
+    font-size: 30px;
     border-radius: 36%;
     border: 2px solid darkslategrey;
+    font-family: 'VT323', monospace;
 }
 
 .age {
