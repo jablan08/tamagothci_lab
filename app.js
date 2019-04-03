@@ -27,11 +27,21 @@ class Tomagotchi {
             alert(`${pet.name} isn't sleepy!`)
         }
     }
+   
+}
+
+class Babygotchi extends Tomagotchi {
+    constructor(name) {
+        super(name);
+    }
     shake() {
         circle.style.animation = "shake .2s 3";
+        circle.style.background = "linear-gradient(to right, #8e2de2, #4a00e0)";
     }
+
 }
 const pet = new Tomagotchi(`${prompt("Name your pet!")}`);
+const babyGotchi = new  Babygotchi("")
 const body = document.querySelector("body");
 const img = document.querySelector("img");
 const name = document.querySelector(".name");
@@ -55,7 +65,7 @@ sleepy.innerText += pet.sleepiness;
 feedButton.addEventListener("click", pet.feed);
 playButton.addEventListener("click", pet.play);
 sleepButton.addEventListener("click", pet.sleep);
-shakeButton.addEventListener("click", pet.shake);
+
 
 const render = () => {
     pet.hunger += 1
@@ -66,7 +76,7 @@ const render = () => {
     sleepy.innerText = `Sleepiness: ${pet.sleepiness}`;
     return deadAF();
 }
-let checkUp = setInterval(render, 120000)
+let checkUp = setInterval(render, 45000)
 
 const oldAF = () => {
     pet.age += 1
@@ -75,11 +85,16 @@ const oldAF = () => {
         img.src = "https://media.giphy.com/media/3KXUztaYAzHaFH6et3/giphy.gif";
     } else if (pet.age === 10) {
         img.src = "https://media.giphy.com/media/7A4GONnjiqxmRhjfgH/giphy.gif";
-      
+    } else if (pet.age === 26) {
+        
+        img.src = "https://media.giphy.com/media/hSM49Vyv0Kg8MnHpIQ/giphy.gif";
+        shakeButton.style.opacity = "5";
+        alert("OMG! Your Tamagotchi was capable of asexual reproduction! IT HAD A BABY!")
+        babyGotchi.name = prompt(`Name ${pet.name}'s baby!`);
     }
 }
 let ageUp = setInterval(oldAF, 60000)
-
+shakeButton.addEventListener("click", babyGotchi.shake);
 const deadAF = () => {
     if (pet.sleepiness === 10 || pet.boredom === 10 || pet.hunger === 10) {
         clearInterval(checkUp);
