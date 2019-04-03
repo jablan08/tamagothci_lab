@@ -37,6 +37,10 @@ class Babygotchi extends Tomagotchi {
     shake() {
         circle.style.animation = "shake .2s 3";
         circle.style.background = "linear-gradient(to right, #8e2de2, #4a00e0)";
+        setTimeout(()=> {
+            circle.style.animation = "";
+            // circle.style.background = "linear-gradient(to right, #734b6d, #42275a)";
+        }, 1000)
     }
 
 }
@@ -75,7 +79,7 @@ const render = () => {
     sleepy.innerText = `Sleepiness: ${pet.sleepiness}`;
     return deadAF();
 }
-let checkUp = setInterval(render, 45000)
+let checkUp = setInterval(render, 20000)
 
 const oldAF = () => {
     pet.age += 1
@@ -92,7 +96,7 @@ const oldAF = () => {
         babyGotchi.name = prompt(`Name ${pet.name}'s baby!`);
     }
 }
-let ageUp = setInterval(oldAF, 60000)
+let ageUp = setInterval(oldAF, 5000)
 shakeButton.addEventListener("click", babyGotchi.shake);
 const deadAF = () => {
     if (pet.sleepiness === 10 || pet.boredom === 10 || pet.hunger === 10) {
