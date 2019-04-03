@@ -29,7 +29,6 @@ class Tomagotchi {
     }
    
 }
-
 class Babygotchi extends Tomagotchi {
     constructor(name) {
         super(name);
@@ -39,13 +38,12 @@ class Babygotchi extends Tomagotchi {
         circle.style.background = "linear-gradient(to right, #8e2de2, #4a00e0)";
         setTimeout(()=> {
             circle.style.animation = "";
-            // circle.style.background = "linear-gradient(to right, #734b6d, #42275a)";
         }, 1000)
     }
 
 }
 const pet = new Tomagotchi(`${prompt("Name your pet!")}`);
-const babyGotchi = new  Babygotchi("")
+const babyGotchi = new  Babygotchi("");
 const body = document.querySelector("body");
 const img = document.querySelector("img");
 const name = document.querySelector(".name");
@@ -88,8 +86,7 @@ const oldAF = () => {
         img.src = "https://media.giphy.com/media/3KXUztaYAzHaFH6et3/giphy.gif";
     } else if (pet.age === 10) {
         img.src = "https://media.giphy.com/media/7A4GONnjiqxmRhjfgH/giphy.gif";
-    } else if (pet.age === 26) {
-        
+    } else if (pet.age === 26) {      
         img.src = "https://media.giphy.com/media/hSM49Vyv0Kg8MnHpIQ/giphy.gif";
         shakeButton.style.opacity = "5";
         alert("OMG! Your Tamagotchi adopted a baby! HOOOORAYYY FOR TAX DEDUCTIONS!")
@@ -97,7 +94,9 @@ const oldAF = () => {
     }
 }
 let ageUp = setInterval(oldAF, 5000)
+
 shakeButton.addEventListener("click", babyGotchi.shake);
+
 const deadAF = () => {
     if (pet.sleepiness === 10 || pet.boredom === 10 || pet.hunger === 10) {
         clearInterval(checkUp);
