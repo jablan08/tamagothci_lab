@@ -66,7 +66,6 @@ feedButton.addEventListener("click", pet.feed);
 playButton.addEventListener("click", pet.play);
 sleepButton.addEventListener("click", pet.sleep);
 
-
 const render = () => {
     pet.hunger += 1
     hungry.innerText = `Hunger: ${pet.hunger}`;
@@ -89,7 +88,7 @@ const oldAF = () => {
         
         img.src = "https://media.giphy.com/media/hSM49Vyv0Kg8MnHpIQ/giphy.gif";
         shakeButton.style.opacity = "5";
-        alert("OMG! Your Tamagotchi was capable of asexual reproduction! IT HAD A BABY!")
+        alert("OMG! Your Tamagotchi adopted a baby! HOOOORAYYY FOR TAX DEDUCTIONS!")
         babyGotchi.name = prompt(`Name ${pet.name}'s baby!`);
     }
 }
